@@ -1,7 +1,0 @@
----
-# Add user and patch kernel.
-
-- include: addUser.yml
-  when: docker.user is defined
-
-- include: patchKernel.yml
