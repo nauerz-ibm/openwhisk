@@ -12,11 +12,7 @@ switch ($_SERVER["REQUEST_URI"]) {
 
     case "/run":
         // Load action code.
-        $action_code = file_get_contents($ACTION_SRC);
-
-        ob_start();
-        eval(' ?> ' . $action_code);
-        ob_end_clean();
+        require $ACTION_SRC;
 
         // Load action params.
         $post_body = file_get_contents('php://input');
